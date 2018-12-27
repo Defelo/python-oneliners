@@ -10,7 +10,7 @@ def try_comp(a, d, n, s):
     return True
 
 
-def primetest(n):
+def primetest(n, r=15):
     if n < 3: return n == 2
     if n % 2 == 0: return False
     s, d = 0, n - 1
@@ -20,7 +20,7 @@ def primetest(n):
             break
         s, d = s + 1, quo
 
-    for i in range(15):
+    for i in range(r):
         if try_comp(random.randrange(2, n), d, n, s):
             return False
     return True
